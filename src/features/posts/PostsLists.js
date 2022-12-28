@@ -32,7 +32,7 @@ const PostsLists = () => {
     return () => {
       fetchRef.current = true;
     };
-  }, [postsStatus, dispatch]);
+  }, [posts, postsStatus, dispatch]);
 
   let content;
   if (postsStatus === "loading") {
@@ -48,12 +48,7 @@ const PostsLists = () => {
     content = <div>{postsError}</div>;
   }
 
-  return (
-    <section>
-      <h2>Posts</h2>
-      {content}
-    </section>
-  );
+  return <section>{content}</section>;
 };
 
 export default PostsLists;
